@@ -1,0 +1,15 @@
+@import url(./modern-normalize.css);
+
+.shopGrid {
+    display: flex;
+    justify-content: center;
+}
+
+.shopItem {
+    border: 1px solid;
+    width: 200px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

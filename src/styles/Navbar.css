@@ -1,0 +1,17 @@
+@import url(./modern-normalize.css);
+
+.navbar {
+    background-color: deepskyblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLinks {
+    display: flex;
+    list-style: none;
+}
+
+li {
+    padding: 10px;
+}

@@ -1,0 +1,27 @@
+// Vitest Snapshot v1
+
+exports[`Navbar tests > The Navbar renders 1`] = `
+<a
+  href="/"
+>
+  Home
+</a>
+`;
+
+exports[`Navbar tests > The Navbar renders 2`] = `
+<a
+  href="/shop"
+>
+  Shop
+</a>
+`;
+
+exports[`Navbar tests > The Navbar renders 3`] = `
+<a
+  href="/cart"
+>
+  Shopping Cart (
+  0
+  )
+</a>
+`;
