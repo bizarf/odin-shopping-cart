@@ -6,43 +6,36 @@ const Shop = (props) => {
             productName: "test",
             image: "test image goes here",
             price: 29.99,
+            productId: 1,
         },
         {
             productName: "test2",
             image: "test2 image goes here",
             price: 19.99,
+            productId: 2,
         },
         {
             productName: "test3",
             image: "test3 image goes here",
             price: 39.99,
+            productId: 3,
         },
     ];
-
-    function addToCart(productName, image, price) {
-        let test = {
-            productName: productName,
-            image: image,
-            price: price,
-            quantity: 1,
-        };
-        props.setCart([...props.cart, test]);
-        console.log(props.cart);
-    }
 
     return (
         <div className="shopPage">
             <h1>Shop</h1>
             <div className="shopGrid">
-                {shopItems.map((item, index) => {
+                {shopItems.map((item) => {
                     return (
-                        <div key={index} className="shopItem">
+                        <div key={item.productId} className="shopItem">
                             <p>{item.productName}</p>
                             <p>{item.image}</p>
-                            <p>{item.price}</p>
+                            <p>£{item.price}</p>
                             <button
                                 onClick={() =>
-                                    addToCart(
+                                    props.addToCart(
+                                        item.productId,
                                         item.productName,
                                         item.image,
                                         item.price
