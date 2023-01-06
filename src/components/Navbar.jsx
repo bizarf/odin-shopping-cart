@@ -4,6 +4,7 @@ import "../styles/Navbar.css";
 const Navbar = (props) => {
     return (
         <nav className="navbar">
+            {/* link function from react router to make the hyperlinks */}
             <Link to="/">Logo goes here</Link>
             <ul className="navLinks">
                 <li>
