@@ -63,7 +63,7 @@ const App = () => {
 
     return (
         <div className="app">
-            <BrowserRouter basename="/">
+            <BrowserRouter basename="/odin-shopping-cart">
                 <Navbar cart={cart} />
                 {/* routes are placed here, so that these pages will open under the navbar div which is the main viewing area */}
                 <div className="content">
