@@ -1,0 +1,51 @@
+.cartPage {
+    margin: 0 100px;
+    background-color: white;
+    flex: 1 0 auto;
+}
+
+.cartItems,
+.total {
+    list-style: none;
+    padding: 0 30px;
+}
+
+.cartItemImage {
+    width: 150px;
+}
+
+ul {
+    padding: 0;
+}
+
+.emptyCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#quantity {
+    pointer-events: none;
+    border: 1px solid;
+    font-size: inherit;
+    padding: 1px 10px;
+}
+
+.cartControls {
+    display: flex;
+    justify-content: center;
+}
+
+.removeItemBtn {
+    width: fit-content;
+}
+
+.itemContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+}
+
+.removeItemContainer {
+    text-align: right;
+}

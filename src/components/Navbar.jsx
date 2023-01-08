@@ -5,16 +5,24 @@ const Navbar = (props) => {
     return (
         <nav className="navbar">
             {/* link function from react router to make the hyperlinks */}
-            <Link to="/">Logo goes here</Link>
+            <Link to="/" className="logo">
+                Computer World
+            </Link>
             <ul className="navLinks">
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/" className="navLinks">
+                        Home
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/shop">Shop</Link>
+                    <Link to="/shop" className="navLinks">
+                        Shop
+                    </Link>
                 </li>
                 <li>
-                    <Link to="/cart">Shopping Cart ({props.cart.length})</Link>
+                    <Link to="/cart" className="navLinks">
+                        Shopping Cart ({props.cart.length})
+                    </Link>
                 </li>
             </ul>
         </nav>

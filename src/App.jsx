@@ -62,35 +62,43 @@ const App = () => {
     };
 
     return (
-        <div>
+        <div className="app">
             <BrowserRouter>
                 <Navbar cart={cart} />
                 {/* routes are placed here, so that these pages will open under the navbar div which is the main viewing area */}
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route
-                        path="/Shop"
-                        element={
-                            <Shop
-                                setCart={setCart}
-                                cart={cart}
-                                addToCart={addToCart}
-                            />
-                        }
-                    />
-                    <Route
-                        path="/Cart"
-                        element={
-                            <Cart
-                                cart={cart}
-                                removeItemFromCart={removeItemFromCart}
-                                increaseQuantity={increaseQuantity}
-                                decreaseQuantity={decreaseQuantity}
-                            />
-                        }
-                    />
-                </Routes>
+                <div className="content">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route
+                            path="/Shop"
+                            element={
+                                <Shop
+                                    setCart={setCart}
+                                    cart={cart}
+                                    addToCart={addToCart}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/Cart"
+                            element={
+                                <Cart
+                                    cart={cart}
+                                    removeItemFromCart={removeItemFromCart}
+                                    increaseQuantity={increaseQuantity}
+                                    decreaseQuantity={decreaseQuantity}
+                                />
+                            }
+                        />
+                    </Routes>
+                </div>
             </BrowserRouter>
+            <footer>
+                <span>
+                    Page created by{" "}
+                    <a href="https://github.com/bizarf">Bizarf</a>
+                </span>
+            </footer>
         </div>
     );
 };

@@ -1,27 +1,7 @@
 import "../styles/Shop.css";
+import shopItems from "./shopItems";
 
 const Shop = (props) => {
-    const shopItems = [
-        {
-            productName: "test",
-            image: "test image goes here",
-            price: 29.99,
-            productId: 1,
-        },
-        {
-            productName: "test2",
-            image: "test2 image goes here",
-            price: 19.99,
-            productId: 2,
-        },
-        {
-            productName: "test3",
-            image: "test3 image goes here",
-            price: 39.99,
-            productId: 3,
-        },
-    ];
-
     return (
         <div className="shopPage">
             <h1>Shop</h1>
@@ -29,8 +9,14 @@ const Shop = (props) => {
                 {shopItems.map((item) => {
                     return (
                         <div key={item.productId} className="shopItem">
-                            <p>{item.productName}</p>
-                            <p>{item.image}</p>
+                            <p className="shopProductName">
+                                {item.productName}
+                            </p>
+                            <img
+                                src={item.image}
+                                alt={item.productName}
+                                className="shopPageProductImage"
+                            />
                             <p>£{item.price}</p>
                             <button
                                 onClick={() =>

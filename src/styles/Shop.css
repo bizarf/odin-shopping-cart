@@ -1,4 +1,8 @@
-@import url(./modern-normalize.css);
+.shopPage {
+    margin: 0 100px;
+    background-color: white;
+    flex: 1 0 auto;
+}
 
 .shopGrid {
     display: flex;
@@ -7,9 +11,20 @@
 
 .shopItem {
     border: 1px solid;
-    width: 200px;
-    margin: 10px;
+    width: 250px;
+    margin: 5px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+}
+
+.shopPageProductImage {
+    width: 200px;
+}
+
+.shopProductName {
+    text-align: center;
+    margin: 10px;
 }
