@@ -4,6 +4,8 @@ The goal of this project is to create a shopping cart app using React. I will be
 
 This project was created using Vite, and testing was done using Vitest.
 
+[View the live site here](https://bizarf.github.io/odin-shopping-cart/)
+
 To run this project on your local server, type:
 
 ```
