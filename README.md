@@ -14,7 +14,7 @@ npm run dev
 
 <hr>
 
-#####Credits:
+##### Credits:
 
 -   keyboard background photo: Aedrian (https://unsplash.com/photos/VbUWr1tf5rI)
 -   pointing at monitor photo: John Schnobrich (https://unsplash.com/photos/FlPc9_VocJ4)
