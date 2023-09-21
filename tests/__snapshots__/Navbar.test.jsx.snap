@@ -1,8 +1,9 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Navbar tests > The Navbar renders 1`] = `
 <a
-  href="/"
+  class="navLinks"
+  href="#/"
 >
   Home
 </a>
@@ -10,7 +11,8 @@ exports[`Navbar tests > The Navbar renders 1`] = `
 
 exports[`Navbar tests > The Navbar renders 2`] = `
 <a
-  href="/shop"
+  class="navLinks"
+  href="#/shop"
 >
   Shop
 </a>
@@ -18,7 +20,8 @@ exports[`Navbar tests > The Navbar renders 2`] = `
 
 exports[`Navbar tests > The Navbar renders 3`] = `
 <a
-  href="/cart"
+  class="navLinks"
+  href="#/cart"
 >
   Shopping Cart (
   0

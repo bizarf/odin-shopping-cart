@@ -1,9 +1,8 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import App from "../src/App";
-import { describe, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 
 describe("Navbar tests", () => {
     it("The Navbar renders", () => {
@@ -19,28 +18,35 @@ describe("Navbar tests", () => {
 
 describe("Router tests", () => {
     it("The app goes from the homepage to the shop page", async () => {
+        const user = userEvent.setup();
         render(<App />);
-        const shopLink = screen.getByText("Shop");
-        await userEvent.click(shopLink);
-        const shopHeader = screen.getByRole("heading", { level: 1 });
-        expect(shopHeader).toHaveTextContent("Shop");
+        const shopLink = screen.getByRole("link", { name: "Shop" });
+        await user.click(shopLink);
+        const shopHeader = screen.getByRole("heading", { name: "Shop" });
+        expect(shopHeader).toBeInTheDocument();
     });
 
     it("The app goes from the homepage to the cart page", async () => {
+        const user = userEvent.setup();
         render(<App />);
-        const cartLink = screen.getByText("Shopping Cart (0)");
-        await userEvent.click(cartLink);
-        const cartHeader = screen.getByRole("heading", { level: 1 });
-        expect(cartHeader).toHaveTextContent("Shopping cart goes here");
+        const cartLink = screen.getByRole("link", {
+            name: "Shopping Cart (0)",
+        });
+        await user.click(cartLink);
+        const cartHeader = screen.getByRole("heading", {
+            name: "My Shopping Cart",
+        });
+        expect(cartHeader).toBeInTheDocument();
     });
 
     it("The app goes back to the homepage from the shop page", async () => {
+        const user = userEvent.setup();
         render(<App />);
-        const homeLink = screen.getByText("Home");
-        const shopLink = screen.getByText("Shop");
-        await userEvent.click(shopLink);
-        await userEvent.click(homeLink);
-        const homePageText = screen.getByText("Home page goes here");
+        const homeLink = screen.getByRole("link", { name: "Home" });
+        const shopLink = screen.getByRole("link", { name: "Shop" });
+        await user.click(shopLink);
+        await user.click(homeLink);
+        const homePageText = screen.getByText("Welcome to Computer World!");
         expect(homePageText).toBeInTheDocument();
     });
 });

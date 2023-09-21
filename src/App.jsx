@@ -1,9 +1,5 @@
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import Shop from "./components/Shop";
-import Cart from "./components/Cart";
-import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import Router from "./Router";
 
 const App = () => {
     const [cart, setCart] = useState([]);
@@ -63,42 +59,14 @@ const App = () => {
 
     return (
         <div className="app">
-            <BrowserRouter basename="/odin-shopping-cart">
-                <Navbar cart={cart} />
-                {/* routes are placed here, so that these pages will open under the navbar div which is the main viewing area */}
-                <div className="content">
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route
-                            path="/Shop"
-                            element={
-                                <Shop
-                                    setCart={setCart}
-                                    cart={cart}
-                                    addToCart={addToCart}
-                                />
-                            }
-                        />
-                        <Route
-                            path="/Cart"
-                            element={
-                                <Cart
-                                    cart={cart}
-                                    removeItemFromCart={removeItemFromCart}
-                                    increaseQuantity={increaseQuantity}
-                                    decreaseQuantity={decreaseQuantity}
-                                />
-                            }
-                        />
-                    </Routes>
-                </div>
-            </BrowserRouter>
-            <footer>
-                <span>
-                    Page created by{" "}
-                    <a href="https://github.com/bizarf">Bizarf</a>
-                </span>
-            </footer>
+            <Router
+                cart={cart}
+                setCart={setCart}
+                addToCart={addToCart}
+                removeItemFromCart={removeItemFromCart}
+                increaseQuantity={increaseQuantity}
+                decreaseQuantity={decreaseQuantity}
+            />
         </div>
     );
 };
