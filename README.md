@@ -6,7 +6,13 @@ This project was created using Vite, and testing was done using Vitest.
 
 [View the live site here](https://bizarf.github.io/odin-shopping-cart/)
 
-To run this project on your local server, type:
+To run this project on your local server, first clone the repo, then type:
+
+```
+npm install
+```
+
+Once that is done you can run the server with:
 
 ```
 npm run dev
@@ -14,7 +20,7 @@ npm run dev
 
 <hr>
 
-#####Credits:
+##### Credits:
 
 -   keyboard background photo: Aedrian (https://unsplash.com/photos/VbUWr1tf5rI)
 -   pointing at monitor photo: John Schnobrich (https://unsplash.com/photos/FlPc9_VocJ4)
