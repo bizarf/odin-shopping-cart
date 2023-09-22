@@ -1,17 +1,22 @@
 import { Link } from "react-router-dom";
+import { ShopContext } from "../App";
 import "../styles/Cart.css";
+import React, { useContext } from "react";
 
-const Cart = (props) => {
+const Cart = () => {
+    const { cart, decreaseQuantity, increaseQuantity, removeItemFromCart } =
+        useContext(ShopContext);
+
     const total = () => {
         // reduce function to go through each item's price in the array and return the total
-        let totalPrice = props.cart.reduce((total, item) => {
+        let totalPrice = cart.reduce((total, item) => {
             return total + item.price * item.quantity;
         }, 0);
         // format the total to show numbers with two decimal places
         return parseFloat(totalPrice).toFixed(2);
     };
 
-    const cartItems = props.cart.length;
+    const cartItems = cart.length;
 
     return (
         <div className="cartPage">
@@ -20,7 +25,7 @@ const Cart = (props) => {
             {/* if the cart has items then render a ul element containing a map of the cart items as li elements. at the bottom of the ul include a total and checkout button */}
             {cartItems > 0 ? (
                 <ul>
-                    {props.cart.map((cartItem, index) => {
+                    {cart.map((cartItem, index) => {
                         return (
                             <li key={index} className="cartItems">
                                 <div className="itemContainer">
@@ -42,7 +47,7 @@ const Cart = (props) => {
                                     <div className="cartControls">
                                         <button
                                             onClick={() =>
-                                                props.decreaseQuantity(
+                                                decreaseQuantity(
                                                     cartItem.productId
                                                 )
                                             }
@@ -54,7 +59,7 @@ const Cart = (props) => {
                                         </span>
                                         <button
                                             onClick={() =>
-                                                props.increaseQuantity(
+                                                increaseQuantity(
                                                     cartItem.productId
                                                 )
                                             }
@@ -66,7 +71,7 @@ const Cart = (props) => {
                                         <button
                                             className="removeItemBtn"
                                             onClick={() =>
-                                                props.removeItemFromCart(
+                                                removeItemFromCart(
                                                     cartItem.productId
                                                 )
                                             }

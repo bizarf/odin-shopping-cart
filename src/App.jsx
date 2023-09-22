@@ -1,5 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 import Router from "./Router";
+
+export const ShopContext = createContext({
+    cart: [],
+    setCart: () => {},
+    addToCart: () => {},
+    removeItemFromCart: () => {},
+    increaseQuantity: () => {},
+    decreaseQuantity: () => {},
+});
 
 const App = () => {
     const [cart, setCart] = useState([]);
@@ -59,14 +68,18 @@ const App = () => {
 
     return (
         <div className="app">
-            <Router
-                cart={cart}
-                setCart={setCart}
-                addToCart={addToCart}
-                removeItemFromCart={removeItemFromCart}
-                increaseQuantity={increaseQuantity}
-                decreaseQuantity={decreaseQuantity}
-            />
+            <ShopContext.Provider
+                value={{
+                    cart,
+                    setCart,
+                    addToCart,
+                    removeItemFromCart,
+                    increaseQuantity,
+                    decreaseQuantity,
+                }}
+            >
+                <Router />
+            </ShopContext.Provider>
         </div>
     );
 };

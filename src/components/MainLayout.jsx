@@ -2,22 +2,17 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import PropTypes from "prop-types";
 
-const MainLayout = ({ cart }) => {
+const MainLayout = () => {
     return (
         <>
-            <Navbar cart={cart} />
+            <Navbar />
             <div className="content">
                 <Outlet />
             </div>
             <Footer />
         </>
     );
-};
-
-MainLayout.propTypes = {
-    cart: PropTypes.array,
 };
 
 export default MainLayout;

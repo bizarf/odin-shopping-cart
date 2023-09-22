@@ -1,7 +1,11 @@
 import "../styles/Shop.css";
 import shopItems from "./shopItems";
+import { ShopContext } from "../App";
+import React, { useContext } from "react";
 
-const Shop = (props) => {
+const Shop = () => {
+    const { addToCart } = useContext(ShopContext);
+
     return (
         <div className="shopPage">
             <h1>Shop</h1>
@@ -20,7 +24,7 @@ const Shop = (props) => {
                             <p>£{item.price}</p>
                             <button
                                 onClick={() =>
-                                    props.addToCart(
+                                    addToCart(
                                         item.productId,
                                         item.productName,
                                         item.image,

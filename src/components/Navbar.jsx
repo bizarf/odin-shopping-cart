@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
+import { ShopContext } from "../App";
+import React, { useContext } from "react";
 
-const Navbar = (props) => {
+const Navbar = () => {
+    const { cart } = useContext(ShopContext);
+
     return (
         <nav className="navbar">
             {/* link function from react router to make the hyperlinks */}
@@ -21,7 +25,7 @@ const Navbar = (props) => {
                 </li>
                 <li>
                     <Link to="/cart" className="navLinks">
-                        Shopping Cart ({props.cart.length})
+                        Shopping Cart ({cart.length})
                     </Link>
                 </li>
             </ul>

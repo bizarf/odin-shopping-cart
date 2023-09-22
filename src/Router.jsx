@@ -4,57 +4,27 @@ import MainLayout from "./components/MainLayout";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
 import Cart from "./components/Cart";
-import PropTypes from "prop-types";
 
-const Router = ({
-    cart,
-    setCart,
-    addToCart,
-    removeItemFromCart,
-    increaseQuantity,
-    decreaseQuantity,
-}) => {
+const Router = () => {
     const router = createHashRouter([
         {
             path: "/",
-            element: <MainLayout cart={cart} />,
+            element: <MainLayout />,
             children: [
                 { index: true, element: <Home /> },
                 {
                     path: "/Shop",
-                    element: (
-                        <Shop
-                            setCart={setCart}
-                            cart={cart}
-                            addToCart={addToCart}
-                        />
-                    ),
+                    element: <Shop />,
                 },
                 {
                     path: "/Cart",
-                    element: (
-                        <Cart
-                            cart={cart}
-                            removeItemFromCart={removeItemFromCart}
-                            increaseQuantity={increaseQuantity}
-                            decreaseQuantity={decreaseQuantity}
-                        />
-                    ),
+                    element: <Cart />,
                 },
             ],
         },
     ]);
 
     return <RouterProvider router={router} />;
-};
-
-Router.propTypes = {
-    cart: PropTypes.array,
-    setCart: PropTypes.func,
-    addToCart: PropTypes.func,
-    removeItemFromCart: PropTypes.func,
-    increaseQuantity: PropTypes.func,
-    decreaseQuantity: PropTypes.func,
 };
 
 export default Router;
